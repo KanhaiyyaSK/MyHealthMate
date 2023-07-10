@@ -18,10 +18,13 @@ app.use((req, res, next) => {
 	next();
 });
 const userRoutes = require("./routes/userRoutes");
+const medicineRoutes = require("./routes/medicineRoutes");
 
 
 // routes
 app.use("/api/user", userRoutes);
+app.use("/api/medicines",medicineRoutes);
+
 
 
 // connect to db
