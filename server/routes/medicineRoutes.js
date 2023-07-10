@@ -5,8 +5,6 @@ const {
      deleteMedicine,
      getSingleMedicine,
      updateMedicine } = require('../controllers/medicineController');
-const { model } = require('mongoose');
-
 const router = express.Router()
 // get All medicines
 router.get("/",getAllMedicines);

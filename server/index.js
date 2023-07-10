@@ -19,11 +19,13 @@ app.use((req, res, next) => {
 });
 const userRoutes = require("./routes/userRoutes");
 const medicineRoutes = require("./routes/medicineRoutes");
+const appointmentRoutes = require("./routes/appointmentRoutes")
 
 
 // routes
 app.use("/api/user", userRoutes);
 app.use("/api/medicines",medicineRoutes);
+app.use("/api/appointments",appointmentRoutes);
 
 
 
