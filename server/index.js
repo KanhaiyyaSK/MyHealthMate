@@ -29,7 +29,7 @@ app.use("/api/appointments",appointmentRoutes);
 
 
 
-// connect to db
+// connect to database
 mongoose
 	.connect(process.env.MONGO_URI)
 	.then(() => {
