@@ -14,22 +14,22 @@ const router = express.Router();
 // require auth for all workout routes
 // router.use(requireAuth);
 
-// GET all doctors
+// GET all doctors done
 router.get("/", getAllDoctors);
 
-// GET nearby doctors
+// GET nearby doctors done
 router.post("/nearby", getNearbyDoctors);
 
-// GET a single doctor
+// GET a single doctor done
 router.get("/:id", getSingleDoctor);
 
-// POST a new doctor
+// POST a new doctor done
 router.post("/", createDoctor);
 
-// DELETE a doctor
+// DELETE a doctor done
 router.delete("/:id", deleteDoctor);
 
-// UPDATE a doctor
+// UPDATE a doctor done
 router.patch("/:id", updateDoctor);
 
 module.exports = router;
