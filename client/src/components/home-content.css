@@ -1,0 +1,29 @@
+.subsection1, .subsection2{
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+.home-content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.home-content-heading{
+    color:white;
+    /* text-align: center; */
+    background-color: rgb(38, 39, 33);
+    border-radius: 10px;
+    padding:10px
+}
+
+.accordion-button{
+    background-color: rgb(23,29,61)!important;
+    color: white !important;
+}
+.collapsed{
+    background-color: white!important;
+    color: black!important;
+}

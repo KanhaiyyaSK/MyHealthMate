@@ -1,38 +1,125 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d);
+}
+body {
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-form-container,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.outer-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(-45deg, #00efd1, #b9d4ff, #adb7f9, #00fffb);
+  background-size: 400% 400%;
+  animation: gradient 10s infinite alternate 1s;
+}
+
+.login-container,
+.register-container {
+  background-color: whitesmoke;
+  margin:1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;  
+}
+
+.login,
+.register {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-img,
+.register-img {
+  height: 85vh;
+  width: 40vw;
+}
+
+.login-img img {
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+
+.register-img img {
+  height: 100%;
+  width: 100%;
+  mix-blend-mode:multiply;
+
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.form-text {
+  color: black !important;
+}
+
+.link-btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .login-container > .row {
+        padding: 1rem;
+        width: 20rem !important;
+    }
+  .outer-container {
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+  .login-container {
+    margin-top: 2rem;
+    width: fit-content !important;
+  }
+  .register-container {
+    width: fit-content !important;
+    margin-top: 2rem;
+  }
+  .register-img,
+  .login-img {
+    display: none !important;
+  }
+ 
+  .register {
+    padding: 1rem;
+  }
+
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

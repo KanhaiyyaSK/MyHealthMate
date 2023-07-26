@@ -1,0 +1,30 @@
+.sidenav{
+    /* height:100vh;   */
+    min-width: 8vh;  
+    background-color:rgb(23,29,61); 
+    /* background-color:white;  */
+    box-shadow: 0px 2px 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{
+    margin:2vh 0;
+    font-size: 1.5rem;
+}
+
+
+ div.sidenav > *{
+    color:white;
+    transition:all 0.3s;
+    }
+ div.sidenav > *:hover{
+    scale:115%;
+    color:rgb(0, 206, 237);
+    transition:all 0.3s;
+    }
+
+svg:active{
+    
+}

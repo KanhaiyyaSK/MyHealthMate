@@ -16,9 +16,10 @@ const labCountRoutes = require("./routes/labCountRoutes.js");
 const userRoutes = require("./routes/userRoutes");
 const reportsStoreRoutes = require("./routes/reportsStoreRoutes");
 
+const morgan = require("morgan");
 // middleware
 app.use(express.json());
-
+app.use(morgan("dev"));
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
