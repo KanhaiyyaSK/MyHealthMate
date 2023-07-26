@@ -56,7 +56,7 @@ const AllMedicinesTable = (props) => {
 			method: "delete",
 			maxBodyLength: Infinity,
 			url:
-				"https://medpal-backend.onrender.com/api/medicines/" + deleteID,
+				"http://localhost:4000/api/medicines/" + deleteID,
 			headers: {
 				Authorization: `Bearer ${user.token}`,
 			},

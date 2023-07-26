@@ -48,7 +48,7 @@ const Search = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://medpal-backend.onrender.com/api/doctors/nearby",
+      url: "http://localhost:4000/api/doctors/nearby",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

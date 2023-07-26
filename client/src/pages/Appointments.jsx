@@ -84,7 +84,7 @@ const Appointments = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/appointments",
+			url: "http://localhost:4000/api/appointments",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization:`Bearer ${user.token}`
@@ -124,7 +124,7 @@ const Appointments = () => {
 			const axios = require("axios");
 			let config = {
 				method: "get",
-				url: "https://medpal-backend.onrender.com/api/appointments",
+				url: "http://localhost:4000/api/appointments",
 				headers: {
 					"Content-Type": "application/json",
 					"Authorization": `Bearer ${user.token}`,

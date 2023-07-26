@@ -50,7 +50,7 @@ const Calendar = (props) => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: `https://medpal-backend.onrender.com/api/appointments/${deleteID}`,
+      url: `http://localhost:4000/api/appointments/${deleteID}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

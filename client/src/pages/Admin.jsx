@@ -42,7 +42,7 @@ const Admin = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/doctors",
+			url: "http://localhost:4000/api/doctors",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -76,7 +76,7 @@ const Admin = () => {
 	const fetchData = async (e) => {
 		try {
 			const response = await axios.get(
-				`https://medpal-backend.onrender.com/api/doctors`
+				`http://localhost:4000/api/doctors`
 			);
 
 			setFetchedData(response.data);

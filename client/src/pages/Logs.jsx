@@ -18,7 +18,7 @@ const {user} = useAuthContext();
 		let config = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: `https://medpal-backend.onrender.com/api/logs`,
+            url: `http://localhost:4000/api/logs`,
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`
@@ -78,7 +78,7 @@ const {user} = useAuthContext();
                                         className="d-flex justify-content-between align-items-start"
                                     >
                                         <div className="ms-2 me-auto">
-                                            <div className="fw-bold">{elem.content}</div>
+                                            <div className="fw-bold">{elem.logMessage}</div>
                                         </div>
                                       
                                     </ListGroup.Item>

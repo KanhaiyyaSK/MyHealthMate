@@ -37,7 +37,7 @@ const Reports = () => {
 
 	const fetchReports = async () => {
 		try {
-			const response = await axios.get("https://medpal-backend.onrender.com/api/reportsStore", {
+			const response = await axios.get("http://localhost:4000/api/reportsStore", {
 				headers: {
 					Authorization: `Bearer ${user.token}`,
 				},
@@ -65,7 +65,7 @@ const Reports = () => {
 		try {
 			const formData = new FormData();
 			formData.append("file", selectedFile);
-			const response = await axios.post("https://medpal-backend.onrender.com/api/reportsStore", formData, {
+			const response = await axios.post("http://localhost:4000/api/reportsStore", formData, {
 				headers: {
 					Authorization: `Bearer ${user.token}`,
 					"Content-Type": "multipart/form-data",
@@ -85,7 +85,7 @@ const Reports = () => {
 			method: "delete",
 			maxBodyLength: Infinity,
 			url:
-				"https://medpal-backend.onrender.com/api/reportsStore/" + id,
+				"http://localhost:4000/api/reportsStore/" + id,
 			headers: {
 				Authorization: `Bearer ${user.token}`,
 			},

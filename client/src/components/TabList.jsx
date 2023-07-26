@@ -34,7 +34,7 @@ const TabList = (props) => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "https://medpal-backend.onrender.com/api/medicines/" + deleteID,
+      url: "http://localhost:4000/api/medicines/" + deleteID,
       headers: {
         Authorization: `Bearer ${user.token}`,
       },
@@ -67,7 +67,7 @@ const TabList = (props) => {
     let config = {
       method: "patch",
       maxBodyLength: Infinity,
-      url: `https://medpal-backend.onrender.com/api/medicines/${id}`,
+      url: `http://localhost:4000/api/medicines/${id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

@@ -38,7 +38,7 @@ const TabletManager = () => {
 	const handleFetch = async () => {
 		try {
 			const response = await axios.get(
-				"https://medpal-backend.onrender.com/api/medicines",
+				"http://localhost:4000/api/medicines",
 				{
 					headers: {
 						Authorization: `Bearer ${user.token}`,
@@ -98,7 +98,7 @@ const TabletManager = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/medicines",
+			url: "http://localhost:4000/api/medicines",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`,

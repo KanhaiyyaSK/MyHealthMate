@@ -52,7 +52,7 @@ const Dashboard = () => {
 		let configCharts = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/labcounts/type",
+			url: "http://localhost:4000/api/labcounts/type",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`
@@ -63,7 +63,7 @@ const Dashboard = () => {
 		let configMedicines = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/medicines",
+			url: "http://localhost:4000/api/medicines",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`
@@ -73,7 +73,7 @@ const Dashboard = () => {
 		let configReports = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/reportsStore",
+			url: "http://localhost:4000/api/reportsStore",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`
@@ -83,7 +83,7 @@ const Dashboard = () => {
 		let configUser = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: `https://medpal-backend.onrender.com/api/user/${user.user_id}`,
+			url: `http://localhost:4000/api/user/${user.user_id}`,
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`
@@ -94,7 +94,7 @@ const Dashboard = () => {
 		let configAppointments = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: `https://medpal-backend.onrender.com/api/appointments/`,
+			url: `http://localhost:4000/api/appointments/`,
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`
@@ -135,7 +135,7 @@ const Dashboard = () => {
 		
 		let content = `Medicine ${medName} taken at ${new Date()}` 
 		axios.post(
-			"https://medpal-backend.onrender.com/api/logs",
+			"http://localhost:4000/api/logs",
 			{
 			  content: content
 			},
@@ -147,6 +147,7 @@ const Dashboard = () => {
 			}
 		  ).then(response => {
 			console.log(response.data);
+			console.log(content)
 		  }).catch(error => {
 			console.error(error);
 		  });

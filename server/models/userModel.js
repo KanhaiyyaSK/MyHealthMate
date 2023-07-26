@@ -18,8 +18,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  date_of_birth: {
-    type: Date,
+  age: {
+    type: Number,
     required: true,
   },
   gender: {
@@ -39,7 +39,7 @@ userSchema.statics.signup = async function (
 	email,
 	password,
 	name,
-	date_of_birth,
+	age,
 	gender,
 	height,
 	weight
@@ -47,7 +47,7 @@ userSchema.statics.signup = async function (
 	// validation
     // date_of_birth = new Date(date_of_birth)
 	console.log(email, password, name,  gender);
-	if (!email || !password || !name || !date_of_birth  || !gender) {
+	if (!email || !password || !name || !age  || !gender) {
 		throw Error("Incomplete Data");
 	}
 	if (!validator.isEmail(email)) {
@@ -70,7 +70,7 @@ userSchema.statics.signup = async function (
 		email,
 		password: hash,
 		name,
-		date_of_birth,
+		age,
 		gender,
 		height,
 		weight,

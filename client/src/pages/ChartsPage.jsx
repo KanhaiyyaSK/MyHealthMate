@@ -65,7 +65,7 @@ const Charts = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/labcounts",
+			url: "http://localhost:4000/api/labcounts",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`,
@@ -94,7 +94,7 @@ const Charts = () => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/labCounts/type",
+			url: "http://localhost:4000/api/labCounts/type",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`,
@@ -119,7 +119,7 @@ const Charts = () => {
 		let config = {
 			method: "delete",
 			maxBodyLength: Infinity,
-			url: "https://medpal-backend.onrender.com/api/labcounts/latest",
+			url: "http://localhost:4000/api/labcounts/latest",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${user.token}`,

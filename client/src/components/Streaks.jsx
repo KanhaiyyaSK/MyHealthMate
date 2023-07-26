@@ -19,7 +19,7 @@ const Streaks = ({ setShowAlreadyAddedToast, setShowStreakAddedToast }) => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "https://medpal-backend.onrender.com/api/streaks",
+      url: "http://localhost:4000/api/streaks",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -43,7 +43,7 @@ const Streaks = ({ setShowAlreadyAddedToast, setShowStreakAddedToast }) => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://medpal-backend.onrender.com/api/streaks/increment",
+      url: "http://localhost:4000/api/streaks/increment",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
