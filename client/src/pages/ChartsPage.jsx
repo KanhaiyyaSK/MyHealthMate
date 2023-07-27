@@ -110,15 +110,15 @@ const Charts = () => {
       });
   };
 
-  const handleDelete = async () => {
-    // e.preventDefault();
+  const handleDelete = async (e) => {
+    e.preventDefault();
     let data = JSON.stringify({
       testName: readingType,
     });
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/labcounts/latest",
+      url: "http://localhost:4000/api/labcounts/delete/'${response._id}'",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
