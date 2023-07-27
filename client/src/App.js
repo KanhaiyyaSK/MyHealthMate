@@ -16,10 +16,9 @@ import Charts from "./pages/ChartsPage";
 import ErrorPage from "./pages/ErrorPage";
 import ErrorPageLink from "./pages/ErrorPageLink";
 import { useAuthContext } from "./hooks/useAuthContext";
-import Contact  from "./pages/Contact";
+import Contact from "./pages/Contact";
 import Reports from "./pages/Reports";
 import Logs from "./pages/Logs";
-
 
 const App = () => {
   const { user } = useAuthContext();
@@ -33,41 +32,25 @@ const App = () => {
         />
         <Route
           path="/register"
-          element={
-            user ? <Navigate to="/dashboard" /> : <Register />
-          }
+          element={user ? <Navigate to="/dashboard" /> : <Register />}
         />
         <Route
           path="/dashboard"
-          element={
-            user ? <Dashboard /> : <Navigate to="/login" />
-          }
+          element={user ? <Dashboard /> : <Navigate to="/login" />}
         />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/calendar"
-          element={
-            user ? <Calendar /> : <Navigate to="/login" />
-          }
+          element={user ? <Calendar /> : <Navigate to="/login" />}
         />
         <Route
           path="/medicines"
-          element={
-            user ? <TabletManager /> : <Navigate to="/login" />
-          }
+          element={user ? <TabletManager /> : <Navigate to="/login" />}
         />
         <Route
           path="/appointments"
-          element={
-            user ? <Appointments /> : <Navigate to="/login" />
-          }
+          element={user ? <Appointments /> : <Navigate to="/login" />}
         />
         <Route
           path="/admin"
@@ -83,18 +66,18 @@ const App = () => {
         />
         <Route
           path="/logs"
-          element={user ? <Logs/> : <Navigate to="/login" />}
+          element={user ? <Logs /> : <Navigate to="/login" />}
         />
-        
-				<Route
-					path="/reports"
-					element={user ? <Reports /> : <Navigate to="/login" />}
-				/>
+
+        <Route
+          path="/reports"
+          element={user ? <Reports /> : <Navigate to="/login" />}
+        />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<ErrorPageLink />} />
       </Routes>
     </BrowserRouter>
   );
-        }
+};
 
 export default App;

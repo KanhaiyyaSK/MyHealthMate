@@ -26,14 +26,14 @@ const loginUser = async (req, res) => {
 
 // signup a user
 const signupUser = async (req, res) => {
-	const { email, password, name, date_of_birth, gender, height, weight } = req.body;
+	const { email, password, name, age, gender, height, weight } = req.body;
 
 	try {
 		const user = await User.signup(
 			email,
 			password,
 			name,
-			date_of_birth,
+			age,
 			gender,
 			height,
 			weight
@@ -55,7 +55,7 @@ const getUserDetailsWithId = async (req, res) => {
   res.status(200).json({
     name: user_data.name,
     email: user_data.email,
-    date_of_birth: user_data.date_of_birth,
+    age: user_data.age,
     gender: user_data.gender,
     height: user_data.height,
     weight: user_data.weight,

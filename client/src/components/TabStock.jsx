@@ -10,7 +10,7 @@ import LoadingCircle from "./SkeletonLoaders/LoadingCircle";
 const TabStock = (props) => {
   const [fetchedMedicineData, setFetchedMedicineData] = useState(null);
   const { user } = useAuthContext();
-  const {handleAddLogs} = props
+  const { handleAddLogs } = props;
   useEffect(
     () => setFetchedMedicineData(props.fetchedMedicineData),
     [props.fetchedMedicineData]
@@ -29,7 +29,7 @@ const TabStock = (props) => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "https://medpal-backend.onrender.com/api/medicines/" + deleteID,
+      url: "http://localhost:4000/api/medicines/" + deleteID,
       headers: {
         Authorization: `Bearer ${user.token}`,
       },
@@ -53,7 +53,7 @@ const TabStock = (props) => {
       handleAddLogs(name);
       return;
     }
-    
+
     e.preventDefault();
     console.log("ID ", id);
     console.log("QUANTITY ", quantity);
@@ -64,83 +64,89 @@ const TabStock = (props) => {
     let config = {
       method: "patch",
       maxBodyLength: Infinity,
-      url: `https://medpal-backend.onrender.com/api/medicines/${id}`,
+      url: `http://localhost:4000/api/medicines/${id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
       data: data,
     };
-    
+
     axios
-    .request(config)
-    .then((response) => {
-      props.setShowTaken(true);
-      props.setTabletName(name);
-      props.handleFetch();
-      handleAddLogs(name);
-    })
-    .catch((error) => {
-      console.log(error);
-      // setShowError(true);
-    });
+      .request(config)
+      .then((response) => {
+        props.setShowTaken(true);
+        props.setTabletName(name);
+        props.handleFetch();
+        handleAddLogs(name);
+      })
+      .catch((error) => {
+        console.log(error);
+        // setShowError(true);
+      });
   };
 
   return (
     <>
-      <div id="tab-stock" className={fetchedMedicineData?"dash-component":"dash-component loading-screen"}>
+      <div
+        id="tab-stock"
+        className={
+          fetchedMedicineData
+            ? "dash-component"
+            : "dash-component loading-screen"
+        }
+      >
         <legend align="center">Medicine Inventory</legend>
-    {
-      !fetchedMedicineData?<LoadingCircle/>:(
-        <>
-<Table striped bordered hover>
-          <tr>
-            <th>Name</th>
-            <th>Stock</th>
-            <th>Expiry</th>
-            <th>Action</th>
-          </tr>
-
-          {fetchedMedicineData?.map((val, key) => {
-            return (
-              <tr key={key}>
-                <td>{val.name}</td>
-                <td>{val.quantity}</td>
-                <td>{new Date(val.expiry).toLocaleDateString()}</td>
-                <td>
-                  <div>
-                    <OverlayTrigger
-                      placement="right"
-                      overlay={<Tooltip>Take Medicine</Tooltip>}
-                    >
-                      <Button
-                        onClick={(e) =>
-                          handleEdit(e, val._id, val.quantity, val.name)
-                        }
-                        variant="secondary"
-                      >
-                        <AiFillMinusCircle />
-                      </Button>
-                    </OverlayTrigger>
-                  </div>
-                </td>
+        {!fetchedMedicineData ? (
+          <LoadingCircle />
+        ) : (
+          <>
+            <Table striped bordered hover>
+              <tr>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Expiry</th>
+                <th>Action</th>
               </tr>
-            );
-          })}
-        </Table>
 
-        <div className="dash-button-container">
-          <Link to={"/medicines"}>
-            {" "}
-            <Button variant="info" onClick={scrollToTop}>
-              <AiFillPlusCircle color="white" />
-            </Button>
-          </Link>
-        </div>
-        </>
-      )
-    }
-        
+              {fetchedMedicineData?.map((val, key) => {
+                return (
+                  <tr key={key}>
+                    <td>{val.name}</td>
+                    <td>{val.quantity}</td>
+                    <td>{new Date(val.expiry).toLocaleDateString()}</td>
+                    <td>
+                      <div>
+                        <OverlayTrigger
+                          placement="right"
+                          overlay={<Tooltip>Take Medicine</Tooltip>}
+                        >
+                          <Button
+                            onClick={(e) =>
+                              handleEdit(e, val._id, val.quantity, val.name)
+                            }
+                            variant="secondary"
+                          >
+                            <AiFillMinusCircle />
+                          </Button>
+                        </OverlayTrigger>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </Table>
+
+            <div className="dash-button-container">
+              <Link to={"/medicines"}>
+                {" "}
+                <Button variant="info" onClick={scrollToTop}>
+                  <AiFillPlusCircle color="white" />
+                </Button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
