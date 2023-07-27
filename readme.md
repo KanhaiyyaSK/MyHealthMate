@@ -1,7 +1,12 @@
 <!-- PROJECT LOGO -->
 <br />
-
- <h1 align="center" style="font-size: 36px; color: #23A6F0;">MyHealth<span style="color: white;">Mate</span></h1>
+<div align="center" style="display: flex; justify-content: center;">
+  <img
+    src="https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/af2c76c5-2204-4ae4-ac59-1379c826b155"
+    alt="MyHealthMate"
+    style="display: block; margin: 0 auto;"
+  />
+</div>
 </div>
 
 
