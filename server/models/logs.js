@@ -20,8 +20,4 @@ const logSchema = new Schema({
 
 const Log = mongoose.model("Log", logSchema);
 
-<<<<<<< HEAD
 module.exports = Log;
-=======
-module.exports = Log;
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f

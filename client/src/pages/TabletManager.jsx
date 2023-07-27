@@ -47,26 +47,8 @@ const TabletManager = () => {
     }
   };
 
-<<<<<<< HEAD
   const handleSubmit = async (e) => {
     e.preventDefault();
-=======
-	const handleFetch = async () => {
-		try {
-			const response = await axios.get(
-				"http://localhost:4000/api/medicines",
-				{
-					headers: {
-						Authorization: `Bearer ${user.token}`,
-					},
-				}
-			);
-			setFetchedData(response.data);
-		} catch (err) {
-			console.log(err);
-		}
-	};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     if (!name || !quantity || !expiry) {
       setNameError(true);
@@ -137,21 +119,8 @@ const TabletManager = () => {
     setScrollPosition(position);
   };
 
-<<<<<<< HEAD
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
-=======
-		let config = {
-			method: "post",
-			maxBodyLength: Infinity,
-			url: "http://localhost:4000/api/medicines",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${user.token}`,
-			},
-			data: data,
-		};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

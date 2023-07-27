@@ -16,13 +16,8 @@ const doctorRoutes = require("./routes/doctorRoutes");
 const labCountRoutes = require("./routes/labCountRoutes.js");
 const userRoutes = require("./routes/userRoutes");
 const reportsStoreRoutes = require("./routes/reportsStoreRoutes");
-<<<<<<< HEAD
 const streakRoutes = require("./routes/streaksRoutes");
 const logRoutes = require("./routes/logRoute");
-=======
-const logRoutes = require("./routes/logRoute");
-
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 const morgan = require("morgan");
 
 
@@ -43,12 +38,8 @@ app.use("/api/doctors", doctorRoutes);
 app.use("/api/labCounts", labCountRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/reportsStore", reportsStoreRoutes);
-<<<<<<< HEAD
 app.use("/api/streaks", streakRoutes);
 app.use("/api/logs", logRoutes);
-=======
-app.use("/api/logs",logRoutes);
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
 // connect to db
 mongoose
