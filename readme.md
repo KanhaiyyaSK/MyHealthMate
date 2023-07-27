@@ -13,6 +13,29 @@
 
 MyHealthMate is a personal medical tracker that lets users manage their well-being online by helping them record and monitor their health particulars. The vision behind this app is to empower everyone with full control over their medical data.
 
+## Features
+- View everything MedPal has to offer collectively in our dashboard<br/><br/>
+- Register
+  ![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/4dcf84ed-38db-48fd-afa5-85d723880abe)
+- Login
+  ![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/9c35d469-1730-48e4-92f4-8f4185e245aa)
+
+- Manage medicine inventory and get daily reminders 💊<br/><br/>
+![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/08426dd6-a488-42e9-8169-494fa4e4c732)
+- Securely store and access lab reports and prescriptions with web viewer 🗊<br/><br/>
+![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/5d0fae89-fcfb-4a3c-99c8-d49e01745356)
+![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/fc902a5a-ce34-4358-bf12-b01edadfe5d4)
+
+- Keep track of medical appointments with the integrated calendar 📅<br/><br/>
+![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/0de15fd0-1ef1-4840-b47e-d3cb5c855a62)
+- Responsive design for seamless experience on mobile devices 📱<br/><br/>
+- Our Team
+- ![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/a681e7a4-19ee-4b1b-b653-ac60f54c60fe)
+
+
+
+
+
 
 
 ## Tech Stack
