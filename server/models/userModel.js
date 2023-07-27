@@ -139,6 +139,7 @@ const userSchema = new Schema({
 
 // static signup method
 userSchema.statics.signup = async function (
+<<<<<<< HEAD
   email,
   password,
   name,
@@ -159,6 +160,28 @@ userSchema.statics.signup = async function (
   if (!validator.isStrongPassword(password)) {
     throw Error("Password not strong enough");
   }
+=======
+	email,
+	password,
+	name,
+	age,
+	gender,
+	height,
+	weight
+) {
+	// validation
+    // date_of_birth = new Date(date_of_birth)
+	console.log(email, password, name,  gender);
+	if (!email || !password || !name || !age  || !gender) {
+		throw Error("Incomplete Data");
+	}
+	if (!validator.isEmail(email)) {
+		throw Error("Email not valid");
+	}
+	if (!validator.isStrongPassword(password)) {
+		throw Error("Password not strong enough");
+	}
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
   const exists = await this.findOne({ email });
 
@@ -169,6 +192,7 @@ userSchema.statics.signup = async function (
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
+<<<<<<< HEAD
   const user = await this.create({
     email,
     password: hash,
@@ -178,6 +202,17 @@ userSchema.statics.signup = async function (
     height,
     weight,
   });
+=======
+	const user = await this.create({
+		email,
+		password: hash,
+		name,
+		age,
+		gender,
+		height,
+		weight,
+	});
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
   console.log("User created: ", user);
 

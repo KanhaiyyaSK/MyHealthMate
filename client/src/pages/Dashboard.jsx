@@ -87,6 +87,7 @@ const Dashboard = () => {
       data: data,
     };
 
+<<<<<<< HEAD
     let configAppointments = {
       method: "get",
       maxBodyLength: Infinity,
@@ -116,6 +117,64 @@ const Dashboard = () => {
       .request(configMedicines)
       .then((res) => setFetchedMedicinesData(res.data))
       .catch((err) => console.log(err));
+=======
+		const axios = require("axios");
+		let data = JSON.stringify({
+			testName: readingType,
+		});
+		let configCharts = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://localhost:4000/api/labcounts/type",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`
+			},
+			data: data,
+		};
+
+		let configMedicines = {
+			method: "get",
+			maxBodyLength: Infinity,
+			url: "http://localhost:4000/api/medicines",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`
+			},
+		};
+
+		let configReports = {
+			method: "get",
+			maxBodyLength: Infinity,
+			url: "http://localhost:4000/api/reportsStore",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`
+			},
+			data: data,
+		};
+		let configUser = {
+			method: "get",
+			maxBodyLength: Infinity,
+			url: `http://localhost:4000/api/user/${user.user_id}`,
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`
+			},
+			data: data,
+		};
+
+		let configAppointments = {
+			method: "get",
+			maxBodyLength: Infinity,
+			url: `http://localhost:4000/api/appointments/`,
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`
+			},
+			data: data,
+		};
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     axios
       .request(configReports)
@@ -224,6 +283,7 @@ const Dashboard = () => {
           </Toast.Body>
         </Toast>
 
+<<<<<<< HEAD
         <div id="user-details">
           {!userDetails ? (
             <>
@@ -242,6 +302,31 @@ const Dashboard = () => {
                   alt="profile"
                   src="https://ik.imagekit.io/0qlf5pqwx/am-a-19-year-old-multimedia-artist-student-from-manila_-_21.png?updatedAt=1681593465157"
                 ></img>
+=======
+	const handleAddLogs = async(medName)=>{
+		const axios = require("axios");
+		
+		let content = `Medicine ${medName} taken at ${new Date()}` 
+		axios.post(
+			"http://localhost:4000/api/logs",
+			{
+			  content: content
+			},
+			{
+			  headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`,
+			  }
+			}
+		  ).then(response => {
+			console.log(response.data);
+			console.log(content)
+		  }).catch(error => {
+			console.error(error);
+		  });
+		  
+	}
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
                 <div id="uname">
                   <h2 id="name">{userDetails?.name}</h2>

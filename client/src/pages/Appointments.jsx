@@ -91,6 +91,7 @@ const Appointments = () => {
       data: data,
     };
 
+<<<<<<< HEAD
     axios
       .request(config)
       .then((response) => {
@@ -99,6 +100,18 @@ const Appointments = () => {
       .catch((error) => {
         console.log(error);
       });
+=======
+		let config = {
+			method: "post",
+			maxBodyLength: Infinity,
+			url: "http://localhost:4000/api/appointments",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization:`Bearer ${user.token}`
+			},
+			data: data,
+		};
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     try {
       if (doctorName) setShow(true);
@@ -206,7 +219,30 @@ const Appointments = () => {
         </Toast>
       </div>
 
+<<<<<<< HEAD
       <Navbar buttons="true" LogButton="true" />
+=======
+	
+	const handleFetch = async (e) => {
+		try {
+			const axios = require("axios");
+			let config = {
+				method: "get",
+				url: "http://localhost:4000/api/appointments",
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization": `Bearer ${user.token}`,
+				},
+				data: {},
+			};
+			const response = await axios(config);
+			setFetchedData(response.data);
+		} catch (err) {
+			console.log(err);
+		}
+	}
+	
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
       <div className="page-container">
         <Sidenav />

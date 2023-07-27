@@ -40,10 +40,43 @@ const Streaks = ({ setShowAlreadyAddedToast, setShowStreakAddedToast }) => {
 
   const handleIncrementStreak = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
   
     if (day === 1) {
       alert('Streak already incremented for today.');
       return; // Return early if streak is already incremented for the day.
+=======
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "http://localhost:4000/api/streaks/increment",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(response.data.currentStreak)
+        setShowStreakAddedToast(true)
+        setStreakNumber(response.data.currentStreak)
+    handleFetchStreak();
+
+      })
+      .catch((error) => {
+        if (error.response.status === 400) {
+          setShowAlreadyAddedToast(true);
+        }
+        
+      });
+  }
+
+  const fireStyle = streakNumber !== 0
+    ? {
+      color: "red"
+>>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
     }
   
     setStreakNumber(streakNumber + 1);
