@@ -35,15 +35,10 @@ const Sidenav = () => {
             <GiMedicines />
           </Link>
         </OverlayTrigger>
+{/*
 
-        <OverlayTrigger
-          placement="right"
-          overlay={<Tooltip>View Charts</Tooltip>}
-        >
-          <Link to="/charts" onClick={scrollToTop}>
-            <AiOutlineAreaChart />
-          </Link>
-        </OverlayTrigger>
+*/}
+       
 
         <OverlayTrigger
           placement="right"

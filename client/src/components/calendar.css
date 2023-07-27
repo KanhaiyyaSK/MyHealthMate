@@ -14,7 +14,7 @@ margin-bottom: 30px;
     width: 1100px;
     margin: 0 auto;
 } */
-    
+
 /* #external-events {
     float: left;
     width: 150px;
@@ -23,7 +23,7 @@ margin-bottom: 30px;
     background: #eee;
     text-align: left;
 } */
-    
+
 /* #external-events h4 {
     font-size: 16px;
     margin-top: 0;
@@ -45,8 +45,6 @@ margin-bottom: 30px;
     margin: 0;
     vertical-align: middle;
 } */
-
-
-
-
-  
+#calendar-main {
+  margin-top: -20em;
+}

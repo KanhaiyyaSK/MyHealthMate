@@ -3,6 +3,7 @@ const multer = require("multer");
 const {
   getListOfReports,
   createReport,
+  deleteReportById,
 } = require("../controllers/reportsStoreController");
 const requireAuth = require("../middleware/requireAuth");
 const path = require("path");
@@ -28,5 +29,8 @@ router.get("/", getListOfReports);
 
 // POST a new report
 router.post("/", upload.single("file"), createReport);
+
+// delete a report
+router.delete("/:id", deleteReportById);
 
 module.exports = router;

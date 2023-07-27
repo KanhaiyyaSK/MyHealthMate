@@ -3,11 +3,18 @@
 }
 
 .dash-component{
+    
     background-color: white;
+   
+  transform: translateY(-0.5vmax);
     /* width: 20vw; */
     /* margin:0.4rem; */
     height: 100%;
     overflow-x: hidden;
+    border-radius: 5px;
+
+    border:1px solid #23a6f0;
+    
 }
 #floater-nodata{
     position:relative;
@@ -23,7 +30,7 @@
   
 /* Track */
 .dash-component::-webkit-scrollbar-track {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* Handle */
@@ -39,14 +46,14 @@
 
 #prescription:hover,#tab-stock:hover,#tab-list:hover{
     transition: all 0.4s;
-    scale:105%;
+    scale:102%;
     
 }
 
 #prescription{
     /* box-shadow: 0px 0px 10px black; */
-    box-shadow: 0px 0px 5px rgb(95, 236, 255);
-    border:1px solid rgb(0, 145, 255);
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+    /* border:1px solid rgb(0, 145, 255); */
     display: flex;
     flex-direction: column;
     border-radius: 10px; 
@@ -57,8 +64,8 @@
 
 #tab-stock{
     /* box-shadow: 0px 0px 10px black; */
-    box-shadow: 0px 0px 5px rgb(95, 236, 255);
-    border:1px solid rgb(0, 145, 255);
+    /* box-shadow: 0px 0px 5px rgb(95, 236, 255); */
+    /* border:1px solid rgb(0, 145, 255); */
     display: flex;
     flex-direction: column;
     border-radius: 10px; 
@@ -69,12 +76,13 @@
 
 #tab-list{
     /* box-shadow: 0px 0px 10px black; */
-    box-shadow: 0px 0px 5px rgb(95, 236, 255);
-    border:1px solid rgb(0, 145, 255);
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+
+    /* border:1px solid rgb(0, 145, 255); */
     display: flex;
     flex-direction: column;
     transition: all 0.4s;
-    border-radius: 10px; 
+    border-radius: 5px; 
     /* overflow: hidden; */
     overflow-y:auto;
 }
@@ -143,7 +151,7 @@ legend{
 .dash-button:hover{
     color:black;
     scale:110%;
-    background-color: rgb(0, 200, 255);
+    background-color: rgb(241 245 249);
     transition:all 0.3s;
 }
 .dash-button:active{

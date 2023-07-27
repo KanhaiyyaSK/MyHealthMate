@@ -107,6 +107,14 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: 2px -2px 20px white;
 }
 
+.soon > h4 {
+    align-items: center;
+    margin-top: 100px;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
 
 .search-container {
     gap:1rem;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Calendar1 from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./calendar.css"
 import {
   Container,
   Row,

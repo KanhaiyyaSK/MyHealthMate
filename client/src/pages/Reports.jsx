@@ -105,6 +105,7 @@ const Reports = () => {
       .then((response) => {
         fetchReports();
         setShowDeleteSuccess(true);
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
