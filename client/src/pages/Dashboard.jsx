@@ -48,7 +48,7 @@ const Dashboard = () => {
     let configCharts = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/labcounts/type",
+      url: "http://localhost:4000/api/labCounts/type",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

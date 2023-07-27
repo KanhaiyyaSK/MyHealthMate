@@ -20,8 +20,8 @@ const streakRoutes = require("./routes/streaksRoutes");
 const logRoutes = require("./routes/logRoute");
 const morgan = require("morgan");
 
-// Add this code below the MongoDB connection setup
 
+// Add this code below the MongoDB connection setup
 
 // middleware
 app.use(express.json());

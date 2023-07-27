@@ -14,7 +14,7 @@ import Sidenav from "../components/Sidenav";
 import Footer from "../components/Footer";
 import LoadingCircle from "../components/SkeletonLoaders/LoadingCircle";
 
-const Charts = () => {
+const ChartPage = () => {
   const { user } = useAuthContext();
   const [readingType, setReadingType] = useState("Blood Sugar");
   const [readingValue, setReadingValue] = useState(null);
@@ -54,37 +54,41 @@ const Charts = () => {
     } else if (readingValue && readingDate) {
       setRequiredError(false);
     }
-
-    let data = JSON.stringify({
-      testName: readingType,
-      count: readingValue,
-      dateTaken: readingDate,
-    });
-
-    let config = {
+    
+    if (!readingValue || !readingDate || readingType === "Select a chart") {
+      return;
+    }
+    
+    try {
+      const data = {
+        testName: readingType,
+        count: readingValue,
+        dateTaken: readingDate,
+      };
+    const config = {
       method: "post",
-      maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/labcounts",
+      url: "http://localhost:4000/api/labCounts", // Change the URL to the correct endpoint
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-      data: data,
+      data: JSON.stringify(data),
     };
 
-    axios
-      .request(config)
-      .then((response) => {
-        setShowToast(true);
-        handleFetch();
-      })
-      .catch((error) => {
-        console.log(error);
-        setShowError(true);
-      });
+    const response = await axios(config);
+    setShowToast(true);
+    handleFetch();
+  } catch (error) {
+    console.error(error);
+    setShowError(true);
+  }
+
+
+    
   };
-  const handleFetch = async (e) => {
+  const handleFetch = async () => {
     // e.preventDefault();
+    // e.preventDefault()
 
     const axios = require("axios");
     let data = JSON.stringify({
@@ -93,7 +97,7 @@ const Charts = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/labCounts/type",
+      url: "http://localhost:4000/api/labCounts",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -118,7 +122,8 @@ const Charts = () => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/labcounts/delete/'${response._id}'",
+
+      url: "http://localhost:4000/api/labCounts/delete/'${response._id}'",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -388,4 +393,4 @@ const Charts = () => {
     </>
   );
 };
-export default Charts;
+export default ChartPage;
