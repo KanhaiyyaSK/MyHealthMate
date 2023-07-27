@@ -48,11 +48,7 @@ const Search = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-<<<<<<< HEAD
       url: "hhttp://localhost:4000/api/doctors/nearby",
-=======
-      url: "http://localhost:4000/api/doctors/nearby",
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

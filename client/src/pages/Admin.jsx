@@ -39,7 +39,6 @@ const Admin = () => {
       fees: fees,
     });
 
-<<<<<<< HEAD
     let config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -49,17 +48,6 @@ const Admin = () => {
       },
       data: data,
     };
-=======
-		let config = {
-			method: "post",
-			maxBodyLength: Infinity,
-			url: "http://localhost:4000/api/doctors",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			data: data,
-		};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     axios
       .request(config)
@@ -85,19 +73,11 @@ const Admin = () => {
     // );
   };
 
-<<<<<<< HEAD
   const fetchData = async (e) => {
     try {
       const response = await axios.get(
         `https://medpal-backend.onrender.com/api/doctors`
       );
-=======
-	const fetchData = async (e) => {
-		try {
-			const response = await axios.get(
-				`http://localhost:4000/api/doctors`
-			);
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
       setFetchedData(response.data);
     } catch (err) {

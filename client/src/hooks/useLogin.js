@@ -10,20 +10,12 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-<<<<<<< HEAD
     const response = await fetch("http://localhost:4000/api/user/login", {
-=======
-		const response = await fetch("http://localhost:4000/api/user/login", {
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
-<<<<<<< HEAD
     const json = await response.json();
-=======
-		const json = await response.json();
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     if (!response.ok) {
       setIsLoading(false);

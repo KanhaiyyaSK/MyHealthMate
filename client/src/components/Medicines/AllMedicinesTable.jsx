@@ -52,7 +52,6 @@ const AllMedicinesTable = (props) => {
   const handleDelete = async (deleteID) => {
     const axios = require("axios");
 
-<<<<<<< HEAD
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
@@ -61,17 +60,6 @@ const AllMedicinesTable = (props) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-=======
-		let config = {
-			method: "delete",
-			maxBodyLength: Infinity,
-			url:
-				"http://localhost:4000/api/medicines/" + deleteID,
-			headers: {
-				Authorization: `Bearer ${user.token}`,
-			},
-		};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     axios
       .request(config)

@@ -123,7 +123,6 @@ const ChartPage = () => {
       method: "delete",
       maxBodyLength: Infinity,
 
-<<<<<<< HEAD
       url: "http://localhost:4000/api/labCounts/delete/'${response._id}'",
       headers: {
         "Content-Type": "application/json",
@@ -131,18 +130,6 @@ const ChartPage = () => {
       },
       data: data,
     };
-=======
-		let config = {
-			method: "post",
-			maxBodyLength: Infinity,
-			url: "http://localhost:4000/api/labcounts",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${user.token}`,
-			},
-			data: data,
-		};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     axios
       .request(config)
@@ -156,7 +143,6 @@ const ChartPage = () => {
       });
   };
 
-<<<<<<< HEAD
   const handleClosePopup = () => {
     setShowDeletePopup(false);
   };
@@ -184,47 +170,6 @@ const ChartPage = () => {
       </Popover.Body>
     </Popover>
   );
-=======
-		const axios = require("axios");
-		let data = JSON.stringify({
-			testName: readingType,
-		});
-		let config = {
-			method: "post",
-			maxBodyLength: Infinity,
-			url: "http://localhost:4000/api/labCounts/type",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${user.token}`,
-			},
-			data: data,
-		};
-		axios
-			.request(config)
-			.then((response) => {
-				setFetchedData(response.data);
-			})
-			.catch((error) => {
-				setShowError(true);
-			});
-	};
-
-	const handleDelete = async () => {
-		// e.preventDefault();
-		let data = JSON.stringify({
-			testName: readingType,
-		});
-		let config = {
-			method: "delete",
-			maxBodyLength: Infinity,
-			url: "http://localhost:4000/api/labcounts/latest",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${user.token}`,
-			},
-			data: data,
-		};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
   return (
     <>

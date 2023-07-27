@@ -60,23 +60,8 @@ const Reports = () => {
     // console.log(selectedFile.name);
   };
 
-<<<<<<< HEAD
   const handleSubmit = async (event) => {
     event.preventDefault();
-=======
-	const fetchReports = async () => {
-		try {
-			const response = await axios.get("http://localhost:4000/api/reportsStore", {
-				headers: {
-					Authorization: `Bearer ${user.token}`,
-				},
-			});
-			setReports(response.data);
-		} catch (error) {
-			console.error(error);
-		}
-	};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     if (selectedFile.size > 2 * 1024 * 1024) {
       alert("File size should be less than 2MB");
@@ -104,7 +89,6 @@ const Reports = () => {
     }
   };
 
-<<<<<<< HEAD
   const handleDelete = async (id) => {
     const axios = require("axios");
     let config = {
@@ -115,17 +99,6 @@ const Reports = () => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-=======
-		try {
-			const formData = new FormData();
-			formData.append("file", selectedFile);
-			const response = await axios.post("http://localhost:4000/api/reportsStore", formData, {
-				headers: {
-					Authorization: `Bearer ${user.token}`,
-					"Content-Type": "multipart/form-data",
-				},
-			});
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
     axios
       .request(config)
@@ -138,26 +111,12 @@ const Reports = () => {
       });
   };
 
-<<<<<<< HEAD
   const handlePopup = (event, deleteID, reportName, index) => {
     setDeleteID(deleteID);
     setShowPopup(true);
     setClickedIndex(index);
     setDeletedFile(reportName);
   };
-=======
-	const handleDelete = async (id) => {
-		const axios = require("axios");
-		let config = {
-			method: "delete",
-			maxBodyLength: Infinity,
-			url:
-				"http://localhost:4000/api/reportsStore/" + id,
-			headers: {
-				Authorization: `Bearer ${user.token}`,
-			},
-		};
->>>>>>> 05a4763e9d1126d6ffb2835e1de5b3e4dac4ec7f
 
   const handleClosePopup = () => {
     setShowPopup(false);
