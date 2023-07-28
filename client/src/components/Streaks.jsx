@@ -20,7 +20,7 @@ const Streaks = ({ setShowAlreadyAddedToast, setShowStreakAddedToast }) => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/streaks",
+      url: "https://myhealthmate.onrender.com/api/streaks",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

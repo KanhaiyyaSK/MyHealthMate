@@ -18,19 +18,22 @@ export const useRegister = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:4000/api/user/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        password,
-        name,
-        age,
-        gender,
-        height,
-        weight,
-      }),
-    });
+    const response = await fetch(
+      "https://myhealthmate.onrender.com/api/user/register",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password,
+          name,
+          age,
+          gender,
+          height,
+          weight,
+        }),
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

@@ -41,7 +41,7 @@ const Reports = () => {
   const fetchReports = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/reportsStore",
+        "https://myhealthmate.onrender.com/api/reportsStore",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

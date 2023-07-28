@@ -29,7 +29,7 @@ const TabStock = (props) => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/medicines/" + deleteID,
+      url: "https://myhealthmate.onrender.com/api/medicines/" + deleteID,
       headers: {
         Authorization: `Bearer ${user.token}`,
       },
@@ -64,7 +64,7 @@ const TabStock = (props) => {
     let config = {
       method: "patch",
       maxBodyLength: Infinity,
-      url: `http://localhost:4000/api/medicines/${id}`,
+      url: `https://myhealthmate.onrender.com/api/medicines/${id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

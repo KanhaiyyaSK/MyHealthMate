@@ -3,7 +3,10 @@ const mongoose = require('mongoose')
 
 // get all appointments
 const getAllAppointments = async (req,res) => {
-    const appointments =await Appointments.find().sort({createdAt:-1});
+    const user_id = req.user._id;
+    const appointments = await Appointments.find({ user_id: user_id }).sort({
+      createdAt: -1,
+    });
     console.log(appointments);
     res.status(200).json(appointments);
 }
@@ -29,6 +32,7 @@ const getSingleAppointment = async (req, res) => {
 const createAppointment = async (req, res) => {
   console.log(req.body);
   const { doctorName, phoneNumber, address, timeAndDate, notes } = req.body;
+  const user_id = req.user._id;
   try {
     const newAppointment = await Appointments.create({
       doctorName,
@@ -36,6 +40,7 @@ const createAppointment = async (req, res) => {
       address,
       timeAndDate,
       notes,
+      user_id
     });
     res.status(200).json({
       mssg: "POST a new appointment",
