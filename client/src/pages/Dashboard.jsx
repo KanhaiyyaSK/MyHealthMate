@@ -47,7 +47,7 @@ const Dashboard = () => {
     let configMedicines = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "https://myhealthmate.onrender.com/api/medicines",
+      url: `https://myhealthmate.onrender.com/api/medicines?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -78,7 +78,7 @@ const Dashboard = () => {
     let configAppointments = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `https://myhealthmate.onrender.com/api/appointments/`,
+      url: `https://myhealthmate.onrender.com/api/appointments?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

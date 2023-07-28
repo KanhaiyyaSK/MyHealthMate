@@ -36,7 +36,7 @@ const TabletManager = () => {
 
   const handleFetch = async () => {
     try {
-      const response = await axios.get("https://myhealthmate.onrender.com/api/medicines", {
+      const response = await axios.get(`https://myhealthmate.onrender.com/api/medicines?user_id=${user.user_id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -92,7 +92,7 @@ const TabletManager = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://myhealthmate.onrender.com/api/medicines",
+      url: `https://myhealthmate.onrender.com/api/medicines?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,

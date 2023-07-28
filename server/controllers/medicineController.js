@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 // get all medicines
 const getAllMedicines = async (req,res) => {
-    const user_id = req.user._id;
+    const user_id = req.query.user_id;
     const medicines = await Medicines.find({ user_id }).sort({ createdAt: -1 });
     console.log(medicines);
     res.status(200).json(medicines);
@@ -28,7 +28,7 @@ const getSingleMedicine = async (req, res) => {
 
 // create a medicine
 const createMedicine = async (req, res) => {
-  const user_id = req.user._id;
+  const user_id = req.query.user_id;
   const { name, quantity, expiry, frequency, timeOfDay, dosageEndDate } =
     req.body;
   try {

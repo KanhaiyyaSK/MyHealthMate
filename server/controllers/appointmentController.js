@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 // get all appointments
 const getAllAppointments = async (req,res) => {
-    const user_id = req.user._id;
+    const user_id = req.query.user_id;
     const appointments = await Appointments.find({ user_id: user_id }).sort({
       createdAt: -1,
     });
@@ -32,7 +32,7 @@ const getSingleAppointment = async (req, res) => {
 const createAppointment = async (req, res) => {
   console.log(req.body);
   const { doctorName, phoneNumber, address, timeAndDate, notes } = req.body;
-  const user_id = req.user._id;
+  const user_id = req.query.user_id;
   try {
     const newAppointment = await Appointments.create({
       doctorName,
