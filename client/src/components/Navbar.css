@@ -118,9 +118,10 @@
 
 #dashboard-button:hover {
   scale: 105%;
-  background-color: white;
+  background-color: #23a6f0;
   translate: -3px 0px;
   transition: all 0.3s;
+  color: white;
 }
 
 #dashboard-button:active {
@@ -128,8 +129,14 @@
   color: white;
 }
 .dashboard:hover {
-  background-color: #23a6f0;
+  background-color: #23a6f0 !important;
   color: white;
+}
+
+.btn-light:hover {
+  background-color: #23a6f0 !important;
+  color: white;
+  border: 1px solid #000 !important;
 }
 
 @media screen and (max-width: 480px) {

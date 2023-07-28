@@ -17,6 +17,7 @@ import { Link, Navigate } from "react-router-dom";
 import { Toast } from "react-bootstrap";
 import { AiFillPlusCircle } from "react-icons/ai";
 import LoadingCircle from "../components/SkeletonLoaders/LoadingCircle";
+import Health_Data from "../components/Health_Data";
 
 const Dashboard = () => {
   const { user } = useAuthContext();
@@ -313,21 +314,7 @@ const Dashboard = () => {
           </div>
 
           <div id="c4" className="component">
-            {!fetchedChartData ? (
-              <>
-                <div className="dash-component">
-                  <legend align="center">Charts</legend>
-                  <LoadingCircle />
-                </div>
-              </>
-            ) : (
-              <AllCharts
-                chartData={fetchedChartData ? fetchedChartData : {}}
-                chartType={readingType}
-                width={450}
-                height={230}
-              />
-            )}
+          <Health_Data/>
           </div>
 
           <div id="c5" className="component calendar-container">

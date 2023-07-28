@@ -19,6 +19,7 @@ const reportsStoreRoutes = require("./routes/reportsStoreRoutes");
 const streakRoutes = require("./routes/streaksRoutes");
 const logRoutes = require("./routes/logRoute");
 const morgan = require("morgan");
+const healthDataRoutes = require('./routes/healthDataRoutes');
 
 
 // Add this code below the MongoDB connection setup
@@ -40,7 +41,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/reportsStore", reportsStoreRoutes);
 app.use("/api/streaks", streakRoutes);
 app.use("/api/logs", logRoutes);
-
+app.use('/api/healthdata',healthDataRoutes)
 // connect to db
 mongoose
   .connect(process.env.MONGO_URI)
