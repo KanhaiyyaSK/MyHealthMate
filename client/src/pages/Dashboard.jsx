@@ -43,20 +43,7 @@ const Dashboard = () => {
 
   const handleFetch = async (e) => {
     const axios = require("axios");
-    let data = JSON.stringify({
-      testName: readingType,
-    });
-    let configCharts = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/labCounts/type",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
-      },
-      data: data,
-    };
-
+   
     let configMedicines = {
       method: "get",
       maxBodyLength: Infinity,
@@ -75,7 +62,7 @@ const Dashboard = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-      data: data,
+     
     };
     let configUser = {
       method: "get",
@@ -85,7 +72,7 @@ const Dashboard = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-      data: data,
+     
     };
 
     let configAppointments = {
@@ -96,17 +83,8 @@ const Dashboard = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-      data: data,
+     
     };
-
-    axios
-      .request(configCharts)
-      .then((response) => {
-        setFetchedChartData(response.data);
-      })
-      .catch((error) => {
-        // setShowError(true);
-      });
 
     axios
       .request(configUser)
