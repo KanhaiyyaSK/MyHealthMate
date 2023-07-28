@@ -14,7 +14,7 @@ const Health_Data = () => {
   const fetchHealthData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/healthdata/${user.user_id}`
+        `https://myhealthmate.onrender.com/api/healthdata/${user.user_id}`
       );
       if (!response.ok) {
         throw new Error("Request failed with status: " + response.status);
@@ -40,7 +40,7 @@ const Health_Data = () => {
   const handleAdd = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/healthdata/${userId}`,
+        `https://myhealthmate.onrender.com/api/healthdata/${userId}`,
         {
           method: "POST",
           headers: {
@@ -69,7 +69,7 @@ const Health_Data = () => {
       console.log(field);
       if (Object.keys(newData).length > 0) {
         const response = await fetch(
-          `http://localhost:4000/api/healthdata?user_id=${userId}&field=${field}`,
+          `https://myhealthmate.onrender.com/api/healthdata?user_id=${userId}&field=${field}`,
           {
             method: "PATCH",
             headers: {
@@ -109,7 +109,7 @@ const Health_Data = () => {
       {values.map((data, index) => (
         <div key={index} className="data-card">
           <div className="field">
-            <h3>Sugar  :</h3>
+            <h3>Sugar :</h3>
             <p className="field-value">{data.Blood_Sugar}</p>
             <div className="buttons">
               <button
@@ -141,7 +141,7 @@ const Health_Data = () => {
           </p>
           <div className="field">
             <h3>B.P. Sys:</h3>
-            
+
             <p className="field-value">{data.B_P_Sys}</p>
             <div className="buttons">
               <button onClick={() => handleUpdateButtonClick(index, "B_P_Sys")}>
