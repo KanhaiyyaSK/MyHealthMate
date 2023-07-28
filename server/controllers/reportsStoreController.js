@@ -20,7 +20,7 @@ const createReport = async (req, res) => {
       return res.status(400).json({ error: "No file provided" });
     }
 
-    const fileUrl = `http://localhost:4000/uploads/${file.filename}`;
+    const fileUrl = `https://myhealthmate.onrender.com/uploads/${file.filename}`;
 
     const user_id = req.user._id;
 
