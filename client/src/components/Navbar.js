@@ -27,9 +27,9 @@ const Navbar = (props) => {
           </div>
         </a>
         <div className="navbar-buttons">
-          <div>
+          <div >
             {props.buttons && !user && (
-              <>
+              <div className="caps-btn">
                 <Link to={"/login"}>
                   <img
                     src="https://ik.imagekit.io/medpal/login.webp?updatedAt=1683913603920"
@@ -44,12 +44,12 @@ const Navbar = (props) => {
                     alt="register"
                   />
                 </Link>
-              </>
+              </div>
             )}
 
             {props.buttons && user && (
               <>
-                <div className="d-flex justify-content-center align-items-center gap-2 navbar-button-container">
+                <div className="d-flex justify-content-center align-items-center gap-2 navbar-button-container left-button">
                   {props.LogButton && (
                     <Link to="/logs">
                       <Button variant="light">

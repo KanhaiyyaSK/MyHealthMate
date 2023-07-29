@@ -142,6 +142,8 @@
 @media screen and (max-width: 480px) {
   .heading {
     font-size: xx-large;
+    position: relative;
+    left: -2rem;
   }
 
   #to-dashboard span {
@@ -159,5 +161,13 @@
   #logout-button {
     margin: 2px;
     padding: 5px 3px;
+  }
+  #login-button,
+  #register-button {
+    height: 40px;
+    width: 55px;
+  }
+  #to-logout {
+    display: none;
   }
 }
