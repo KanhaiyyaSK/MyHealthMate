@@ -83,7 +83,7 @@ const Appointments = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/appointments",
+      url: `https://myhealthmate.onrender.com/api/appointments?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -118,7 +118,7 @@ const Appointments = () => {
       const axios = require("axios");
       let config = {
         method: "get",
-        url: "http://localhost:4000/api/appointments",
+        url: `https://myhealthmate.onrender.com/api/appointments?user_id=${user.user_id}`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,

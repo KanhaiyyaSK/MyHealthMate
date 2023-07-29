@@ -47,7 +47,7 @@ const Dashboard = () => {
     let configMedicines = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/medicines",
+      url: `https://myhealthmate.onrender.com/api/medicines?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -57,7 +57,7 @@ const Dashboard = () => {
     let configReports = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://localhost:4000/api/reportsStore?user_id=${user.user_id}`,
+      url: `https://myhealthmate.onrender.com/api/reportsStore?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -66,7 +66,7 @@ const Dashboard = () => {
     let configUser = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://localhost:4000/api/user/${user.user_id}`,
+      url: `https://myhealthmate.onrender.com/api/user/${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -76,7 +76,7 @@ const Dashboard = () => {
     let configAppointments = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://localhost:4000/api/appointments/`,
+      url: `https://myhealthmate.onrender.com/api/appointments?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
@@ -110,7 +110,7 @@ const Dashboard = () => {
     let content = `Medicine ${medName} taken at ${new Date()}`;
     axios
       .post(
-        "http://localhost:4000/api/logs",
+        "https://myhealthmate.onrender.com/api/logs",
         {
           content: content,
         },

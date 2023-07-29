@@ -18,7 +18,7 @@ const Logs = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://localhost:4000/api/logs`,
+      url: `https://myhealthmate.onrender.com/api/logs`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
