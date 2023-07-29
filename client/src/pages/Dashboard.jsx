@@ -43,7 +43,7 @@ const Dashboard = () => {
 
   const handleFetch = async (e) => {
     const axios = require("axios");
-   
+
     let configMedicines = {
       method: "get",
       maxBodyLength: Infinity,
@@ -57,12 +57,11 @@ const Dashboard = () => {
     let configReports = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/reportsStore",
+      url: `http://localhost:4000/api/reportsStore?user_id=${user.user_id}`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-     
     };
     let configUser = {
       method: "get",
@@ -72,7 +71,6 @@ const Dashboard = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-     
     };
 
     let configAppointments = {
@@ -83,7 +81,6 @@ const Dashboard = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`,
       },
-     
     };
 
     axios
@@ -292,7 +289,7 @@ const Dashboard = () => {
           </div>
 
           <div id="c4" className="component">
-          <Health_Data/>
+            <Health_Data />
           </div>
 
           <div id="c5" className="component calendar-container">
