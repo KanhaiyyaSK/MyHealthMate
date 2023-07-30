@@ -14,7 +14,9 @@
 MyHealthMate is a personal medical tracker that lets users manage their well-being online by helping them record and monitor their health particulars. The vision behind this app is to empower everyone with full control over their medical data.
 
 ## Features
-- View everything MedPal has to offer collectively in our dashboard<br/><br/>
+- Explore the comprehensive features of MyHealthMate seamlessly integrated within our user-friendly dashboard.<br/><br/>
+![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/aac7ed32-7f0e-4032-ac1e-729986dcc3ec)
+
 - Register
   ![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/4dcf84ed-38db-48fd-afa5-85d723880abe)
 - Login
@@ -28,7 +30,20 @@ MyHealthMate is a personal medical tracker that lets users manage their well-bei
 
 - Keep track of medical appointments with the integrated calendar 📅<br/><br/>
 ![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/0de15fd0-1ef1-4840-b47e-d3cb5c855a62)
-- Responsive design for seamless experience on mobile devices 📱<br/><br/>
+- Responsive design for a seamless experience on mobile devices 📱<br/><br/>
+
+
+<div align="center" style="display: flex; justify-content: center;">
+  <img
+    src="https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/75862bc3-086a-40fe-88a5-5dec8e352661"
+    alt="MobileView"
+    style="display: block; margin: 0 auto; width:300px; height:750px"
+  />
+
+</div>
+</div>
+
+
 - Our Team
 - ![image](https://github.com/KanhaiyyaSK/MyHealthMate/assets/97464146/a681e7a4-19ee-4b1b-b653-ac60f54c60fe)
 
