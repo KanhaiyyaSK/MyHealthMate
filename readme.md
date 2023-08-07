@@ -113,8 +113,6 @@ Visit `http://localhost:3000` to view the application in your browser.
 As we continue to develop and improve MyHealthMate, here are some features and improvements we plan to add in the future:
 - Store and analyze lab vitals in charts for easy insights 
 - Push notifications for mobile and browser to remind users of appointments, medicine refills, and other important events.
-- Port the application to a mobile app for more seamless integration with users' daily routines.
-- Develop a business model that includes a Pro version with advanced features, as well as partnerships with healthcare providers and insurance companies.
 
 We are always looking for feedback and suggestions from our users, so if you have any ideas or requests for future improvements, please don't hesitate to reach out to us!
 
